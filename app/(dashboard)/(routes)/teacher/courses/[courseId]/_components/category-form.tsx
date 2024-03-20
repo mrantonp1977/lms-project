@@ -101,8 +101,8 @@ export const CategoryForm = ({
                 <FormItem>
                   <FormControl>
                     <Combobox 
-                      {...field} 
                       options={options} 
+                      {...field} 
                     />
                                           
                   </FormControl>
