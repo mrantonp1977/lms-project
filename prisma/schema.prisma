@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
@@ -24,8 +24,9 @@ model Course {
   price       Float?
   isPublished Boolean @default(false)
 
-  categoryId  String?
-  category    Category?    @relation(fields: [categoryId], references: [id])
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id])
+
   chapters    Chapter[]
   attachments Attachment[]
   purchases   Purchase[]
@@ -34,7 +35,6 @@ model Course {
   updatedAt DateTime @updatedAt
 
   @@index([categoryId])
-  
 }
 
 model Category {
@@ -53,6 +53,8 @@ model Attachment {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([courseId])
 }
 
 model Chapter {
@@ -73,6 +75,8 @@ model Chapter {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([courseId])
 }
 
 model MuxData {
@@ -95,6 +99,9 @@ model UserProgress {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([userId, chapterId])
+  @@index([chapterId])
 }
 
 model Purchase {
@@ -106,6 +113,9 @@ model Purchase {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
+
+  @@unique([userId, courseId])
+  @@index([courseId])
 }
 
 model StripeCustomer {
