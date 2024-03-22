@@ -22,6 +22,7 @@ export const columns: ColumnDef<Course>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className='font-extrabold text-md text-sky-800 text-xl'
         >
           Title
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -36,6 +37,7 @@ export const columns: ColumnDef<Course>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className='font-extrabold text-md text-sky-800 text-xl'
         >
           Price
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -59,6 +61,8 @@ export const columns: ColumnDef<Course>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className='font-extrabold text-md text-sky-800 text-xl'
+  
         >
           Published
           <ArrowUpDown className="ml-2 h-4 w-4" />
