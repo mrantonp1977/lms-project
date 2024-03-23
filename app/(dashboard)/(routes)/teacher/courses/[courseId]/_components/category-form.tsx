@@ -35,7 +35,7 @@ const formSchema = z.object({
 export const CategoryForm = ({
   initialData,
   courseId,
-  options,
+  options
 }: CategoryFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -101,7 +101,7 @@ export const CategoryForm = ({
                 <FormItem>
                   <FormControl>
                     <Combobox 
-                      options={options} 
+                      options={[...options]} 
                       {...field} 
                     />
                                           
