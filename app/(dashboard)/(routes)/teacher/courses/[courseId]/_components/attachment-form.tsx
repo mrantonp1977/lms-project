@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Attachment, Course } from '@prisma/client';
 import axios from 'axios';
 import { File, ImageIcon, Loader2, Pencil, PlusCircle, X } from 'lucide-react';
-import Image from 'next/image';
+
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
